@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div align=center>
+<h2><%= title %></h2>
+
+<table border="1">
+      <tr>
+        <td> Day </td>
+        <td> Time </td>
+	<td> Admittance </td>
+    </tr>
+<%
+    var i=(rows.length-1)
+    for(var j=0; j<10; j++)
+    {
+        var oneItem = rows[i];
+	i--;
+%>
+    <tr>
+        <td><%=oneItem.day%></td>
+        <td><%=oneItem.ctime%></td>
+	<td><%=oneItem.admi%></td>
+    </tr>
+
+<%
+    }
+%>
+</table>
+
+<table>
+<tr>
+<td><a href="/farm">farm control</a></td>
+</tr>
+</table>
+
+</body>
+</html>

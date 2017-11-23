@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div align=center>
+<h2>Data</h2>
+
+
+<h3>ground humidity = <%=title%>%</h3>
+
+<table border="1">
+      <tr>
+        <td>time</td>
+        <td>temperature</td>
+	<td>Humidity</td>
+    </tr>
+<%
+    var i=(rows.length-1)
+    for(var j=0; j<10; j++)
+    {
+        var oneItem = rows[i];
+	i--;
+%>
+    <tr>
+        <td><%=oneItem.ctime%></td>
+        <td><%=oneItem.t1%></td>
+	<td><%=oneItem.h1%></td>
+    </tr>
+
+<%
+    }
+%>
+</table>
+<br>
+<table>
+<tr>
+<td><a href="/farm/enter">entry log</a></td>
+</tr>
+</table>
+
+
+<h2>On/Off Control</h2>
+<h4>LED Control</h4>
+<form action = '/farm' method = 'post'>	
+	<input type = 'submit' value = 'on' name = 'led'>
+	<input type = 'submit' value = 'off' name = 'led'>
+
+
+<h4>Fan Control</h4>
+	<input type = 'submit' value = 'on' name = 'fan'>
+	<input type = 'submit' value = 'off' name = 'fan'>
+
+
+<h4>Water Control</h4>
+	<input type = 'submit' value = 'on' name = 'water'>
+	<input type = 'submit' value = 'off' name = 'water'>
+</form>
+<br>
+<table>
+<td><a href="/farm/camera">curent farm</a></td>
+</table>
+
+</body>
+</html>
